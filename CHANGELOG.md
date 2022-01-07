@@ -1,9 +1,9 @@
-# Change Log
-All notable changes to the "code-spell-checker-ug-khan" extension will be documented in this file.
+# 1.0.0 (2022-01-07)
 
-## [Unreleased]
-- Initial release
 
-## References
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### Features
+
+* 项目的第一个版本剥离,初始化 74c2465
+
+
 
