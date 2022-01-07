@@ -1,0 +1,89 @@
+{
+  "name": "shirkhan-spell-checker",
+  "description": "shirkhan spell checker for VS Code.",
+  "version": "1.0.0",
+  "displayName": "shirkhan Spell Checker",
+  "icon": "images/icon.png",
+  "preview": true,
+  "private": true,
+  "publisher": "ishirkhan",
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "repository": {},
+  "extensionKind": [
+    "workspace"
+  ],
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "shirkhan",
+    "Ug-khan",
+    "VS Code Extension",
+    "Spelling Checker",
+    "dictionary",
+    "spelling"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "qna": "marketplace",
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cSpellExt_ug-khan.enable",
+        "title": "Enable Ug_khan Spell Checker Dictionary"
+      },
+      {
+        "command": "cSpellExt_ug-khan.disable",
+        "title": "Disable Ug_khan Spell Checker Dictionary"
+      },
+      {
+        "command": "cSpellExt_ug-khan.enableWorkspace",
+        "title": "Enable Ug_khan Spell Checker Dictionary in Workspace"
+      },
+      {
+        "command": "cSpellExt_ug-khan.disableWorkspace",
+        "title": "Disable Ug_khan Spell Checker Dictionary in Workspace"
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "streetsidesoftware.code-spell-checker"
+  ],
+  "scripts": {
+    "clean": "rimraf out",
+    "clean-build": "yarn run clean && yarn run build",
+    "publish-extension": "vsce publish",
+    "vscode:build": "vsce package --no-yarn",
+    "build": "tsc -p ./",
+    "prepare": "yarn run build",
+    "watch": "tsc -watch -p ./",
+    "test": "node ../../node_modules/vscode/bin/test",
+    "changelog:first": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && yarn changeissueurl",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s && yarn changeissueurl",
+    "release": "./scripts/release.sh",
+    "release:major": "yarn release -r major",
+    "release:minor": "yarn release -r minor",
+    "release:patch": "yarn release -r patch",
+    "changeissueurl": "replace 'https://github.com/ishirkhan/shirkhan-vscode/commit/' 'https://gitee.com/silvaq/shirkhan-vscode/commit/'"
+  },
+  "dependencies": {
+    "cspell-dict-ug-khan": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^17.0.8",
+    "@types/vscode": "^1.63.1",
+    "rimraf": "^3.0.2",
+    "typescript": "4.4.4",
+    "vsce": "1.103.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "replace": "^1.2.1",
+    "standard-version": "^9.3.2"
+  }
+}
